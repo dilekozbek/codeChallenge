@@ -1,0 +1,10 @@
+<div ng-hide="loaded">Loading...</div>
+<div ng-cloak="" ng-show="loaded">
+    <div ng-if="error">
+        <p>{{error}}</p>
+    </div>
+    <div class="imageList" ng-repeat="serie in series | orderBy:'+title'" ng-if="serie.programType == 'series' && serie.releaseYear >= '2010'">
+        <img src="{{serie.images['Poster Art'].url}}" alt="">
+        <p>{{ serie.title }}</p>
+    </div>
+</div>
